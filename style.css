@@ -1,0 +1,44 @@
+#top {
+    text-align: center;
+}
+
+#logo {
+    color: white;
+    background-color: rgb(0, 110, 255);
+    display: inline-block;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 8px;
+    margin-top: 16px;
+}
+
+#logoname {
+    font-size: 32px;
+    font-weight: bold;
+    margin:16px;
+    color:white
+    
+    
+    
+}
+#navigation a {
+    color: rgb(217, 255, 0);
+    padding: 8px;
+    font-size: 20px;
+}
+#navigation a:hover {
+    color: rgb(0, 255, 242);
+}
+#uem {
+    color:white;
+    font-size: 20pt;
+    border: none;
+    font-weight: bold;
+}
+#uem :hover {
+    text-decoration:underline;
+}
+#error{
+    font-size: 50px;
+    color:white
+}
