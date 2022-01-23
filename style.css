@@ -116,3 +116,7 @@ header::before {
 #vids{
     background-color: black;
 }
+#txt2{
+    font-size: 20px;
+    color: rgb(64,224,208); 
+}
