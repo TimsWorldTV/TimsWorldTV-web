@@ -1,0 +1,31 @@
+#top {
+    text-align: center;
+}
+
+#logo {
+    color: white;
+    background-color: rgb(211, 70, 94);
+    display: inline-block;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 8px;
+    margin-top: 16px;
+}
+
+#logoname {
+    font-size: 32px;
+    font-weight: bold;
+    margin:16px;
+    color:white
+    
+    
+    
+}
+#navigation a {
+    color: red;
+    padding: 8px;
+    font-size: 20px;
+}
+#navigation a:hover {
+    color: rgb(0, 255, 242);
+}
