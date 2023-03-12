@@ -1,0 +1,242 @@
+<p>Visitor count: <span id="counter" class="counter">0</span></p>
+<button id="reset-button" class="reset-button">Reset counter</button>
+
+<style>
+    body {
+        background-color: #000000; /* change background color to black */
+    }
+    p {
+        font-size: 20px; /* increase the font-size of the text*/
+        color:white;
+    }
+    .counter {
+        font-size: 36px;  /* increased font size */
+        font-weight: bold;
+        color: blue;
+    }
+
+    .reset-button {
+        background-color: red;
+        color: white;
+        padding: 5px 10px; /* decreased padding */
+        border-radius: 5px;
+        font-size: 12px;  /* decreased font size */
+    }
+</style>
+
+<script>
+    // Get count from local storage or set to 0 if it doesn't exist
+    var count = localStorage.getItem("count");
+    if(count == null){
+        localStorage.setItem("count", 0);
+    }
+    document.getElementById("counter").innerHTML = localStorage.getItem("count");
+
+    // increment the count variable
+    count++;
+    localStorage.setItem("count", count);
+    document.getElementById("counter").innerHTML = localStorage.getItem("count");
+
+    // Add event listener to reset button
+    document.getElementById("reset-button").addEventListener("click", function(){
+        var email = prompt("Please enter your email:");
+        var password = prompt("Please enter your password:");
+
+        // Check if email and password match the hard-coded values
+        if (email === "admin@example.com" && password === "password") {
+            localStorage.setItem("count", 0);
+            document.getElementById("counter").innerHTML = 0;
+            alert("Counter has been reset!");
+        } else {
+            alert("Invalid email or password. Please try again.");
+        }
+    });
+</script>
+<br><br><br><br>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Countdown zum 8.8.2023</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      #countdown {
+        background-color: red;
+        padding: 10px;
+        border: 2px solid white;
+        border-radius: 20px;
+        font-size: 2em;
+        text-align: center;
+        width: fit-content;
+        display:block;
+      }
+      #week {
+        background-color: blue;
+        padding: 10px;
+        border: 2px solid white;
+        border-radius: 20px;
+        font-size: 1.5em;
+        text-align: center;
+        width: fit-content;
+        display:block;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="countdown"></div>
+    <div id="week"></div>
+
+    <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("Aug 8, 2023 00:00:00").getTime();
+
+      // Update the count down every 1 second
+      var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var weeks = Math.floor(days / 7);
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="countdown"
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+        document.getElementById("week").innerHTML = weeks + " weeks";
+
+        // If the count down is finished, write some text 
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countdown").innerHTML = "EXPIRED";
+          document.getElementById("week").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
+<br>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #gif1, #gif2 {
+        position: absolute;
+        animation: move 10s linear infinite;
+      }
+      
+      @keyframes move {
+        from {
+          left: 0;
+        }
+        to {
+          left: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img id="gif1" src="https://i0.wp.com/www.printmag.com/wp-content/uploads/2021/02/4cbe8d_f1ed2800a49649848102c68fc5a66e53mv2.gif?resize=476%2C280&ssl=1" width="50%" height="50%">
+  </body>
+</html>
+<br>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Position des Fisches */
+      #fish {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 75px;
+      }
+      /* Hintergrundfarbe */
+      body {
+        background-color: black;
+      }
+    </style>
+    <script>
+      // Initialisiere die Position des Fisches
+      var fishX = 0;
+      var fishY = 0;
+
+  // Bewegungsrichtung
+  var xSpeed = 1;
+  var ySpeed = 1;
+  
+  // Fischbewegung
+  function moveFish() {
+    fishX += xSpeed;
+    fishY += ySpeed;
+    
+    // Prüfe, ob der Fisch die Seitenränder erreicht
+    if (fishX + 100 > window.innerWidth || fishX < 0) {
+      xSpeed = -xSpeed;
+    }
+    if (fishY + 75 > window.innerHeight || fishY < 0) {
+      ySpeed = -ySpeed;
+    }
+    
+    // Aktualisiere die Position des Fisches
+    var fish = document.getElementById("fish");
+    fish.style.left = fishX + "px";
+    fish.style.top = fishY + "px";
+    
+    // Wiederhole die Bewegung
+    setTimeout(moveFish, 10);
+  }
+  //Funktion um den Hintergrund zu blinken
+  function flashBackground() {
+    var body = document.querySelector("body");
+    body.style.backgroundColor = "red";
+    setTimeout(function() {
+      body.style.backgroundColor = "black";
+    }, 100);
+  }
+  //Fügt dem Fisch den Eventlistener hinzu um die flashBackground-Funktion aufzurufen
+  function addClickEvent() {
+    var fish = document.getElementById("fish");
+    fish.addEventListener("click", flashBackground);
+  }
+</script>
+
+  </head>
+  <body onload="moveFish(); addClickEvent();">
+    <img id="fish" src="fish.gif" alt="Fish">
+  </body>
+</html>
+<br>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meine PHP-HTML Seite</title>
+</head>
+<body>
+  <h1>Mein generierter Text:</h1>
+  <p style="color: white;">
+    <?php
+      // Hier steht das PHP-Script, das den zufälligen Text generiert
+      $randomText = "";
+      $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      $charactersLength = strlen($characters);
+
+php
+
+  for ($i = 0; $i < 10; $i++) {
+    $randomText .= $characters[rand(0, $charactersLength - 1)];
+  }
+
+  echo $randomText;
+?>
+
+  </p>
+</body>
+</html>
