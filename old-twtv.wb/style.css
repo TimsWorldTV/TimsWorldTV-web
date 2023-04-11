@@ -135,3 +135,7 @@ body {
 #search-results li:hover {
   background-color: #f5f5f5;
 }
+.important{
+  color: red;
+  font-size: 24px;
+}
