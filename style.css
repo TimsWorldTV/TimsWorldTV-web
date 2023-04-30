@@ -112,8 +112,15 @@
   	z-index: 2;
 }
 .file {
-  border: 1px solid black;
-  padding: 5px;
+  display: block;
   margin: 5px;
+  padding: 5px;
+  border: 1px solid black;
   border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+.file:hover {
+  background-color: #f2f2f2;
 }
