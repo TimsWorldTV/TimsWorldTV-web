@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <title>TWTV/3D</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
   </head>
+  <script>
+        function downloadFile(url) {
+            window.location.href = url;
+        }
+    </script>
   <body>
     <div class="banner">
       <div class="menu">
@@ -12,7 +17,7 @@
           <img src="img/t3dw.png" alt="Logo" class="logo">
         </a>
         <ul>
-            <li><a href="3d/stldown.php">STL-Downloads</a></li>
+            <li><a href="stldown.php">STL-Downloads</a></li>
             <li><a href="#">Platzhalter</a></li>
             <li><a href="#">Platzhalter</a></li>
 
@@ -28,7 +33,12 @@
       <div class="content">
         <h1>Tims 3D World(T3DW)</h1>
         <p> Alles rund um FreeCAD</p>
+        <?php include('files.php'); ?>
       </div>
+      
     </div>
+    
+    
+    
   </body>
 </html>
