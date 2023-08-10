@@ -158,6 +158,7 @@
   text-align: center;
 }
 iframe {
+  text-align: center;
   border: none;
   width: 100%;
   height: 800px; /* Set the height as needed */
