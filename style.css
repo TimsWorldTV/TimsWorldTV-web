@@ -152,14 +152,3 @@
     font-size: 18px;
   }
 }
-.iframe-container {
-  width: 100%;
-  max-width: 1000px; /* Set the maximum width as needed */
-  text-align: center;
-}
-iframe {
-  text-align: center;
-  border: none;
-  width: 100%;
-  height: 800px; /* Set the height as needed */
-}
