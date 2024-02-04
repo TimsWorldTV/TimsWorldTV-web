@@ -19,10 +19,10 @@
             
           </ul> 
         <ul>
-            <li><a href="../home">Startseite</a></li>
-            <li><a href="../gaming">Gaming-Lounge</a></li>
-            <li><a href="../technik">Technik-Lounge</a></li>
-            <li><a href="../3d">3D-Lounge</a></li>
+          <li><a href="../../home">Startseite</a></li>
+          <li><a href="../../gaming">Gaming-Lounge</a></li>
+          <li><a href="../../technik">Technik-Lounge</a></li>
+          <li><a href="../../3d">3D-Lounge</a></li>
         </ul>
         
       </div>
@@ -31,12 +31,53 @@
         <p>
             <div align="center">
                 <br><br><br>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/ODt1vLZH9lo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <br><br><br>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/gQ3_jjYVlGI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <br><br><br>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/eCZbaH4M3aU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </body>
+
+        <button id="load-videos-btn">Videos laden</button>
+            <div class="important" id="important-text">Beim Klicken auf "Videos laden" bestätigst du, dass du die Nutzungsbedingungen 
+              <br>von <a href="https://www.youtube.com/static?gl=DE&template=terms&hl=de" target="_blank">Youtube</a> gelesen und akzeptiert hast.
+            </div>
+            <div id="video-container"></div>
+            <script>
+              document.getElementById('load-videos-btn').addEventListener('click', function() {
+                var videoContainer = document.getElementById('video-container');
+                var importantText = document.getElementById('important-text');
+                var loadVideosBtn = document.getElementById('load-videos-btn');
+
+                
+                var videoLinks = [
+                    "https://www.youtube.com/embed/ODt1vLZH9lo",
+                    "https://www.youtube.com/embed/gQ3_jjYVlGI",
+                    "https://www.youtube.com/embed/eCZbaH4M3aU",
+                ];
+
+                
+                videoLinks.forEach(function(link) {
+                    var iframeContainer = document.createElement('div');
+                    var iframe = document.createElement('iframe');
+                    var br = document.createElement('br');
+
+                    iframeContainer.appendChild(iframe);
+                    iframeContainer.appendChild(br); 
+
+                    iframe.setAttribute('width', '640');
+                    iframe.setAttribute('height', '360');
+                    iframe.setAttribute('src', link);
+                    iframe.setAttribute('title', 'YouTube video player');
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                    iframe.setAttribute('allowfullscreen', '');
+
+                    
+                    videoContainer.appendChild(iframeContainer);
+                });
+
+                
+                importantText.parentNode.removeChild(importantText);
+                loadVideosBtn.parentNode.removeChild(loadVideosBtn);
+              });
+            </script>
+          </body>
+
         </p>
         <br><br><br><br>
         <div class="important">
